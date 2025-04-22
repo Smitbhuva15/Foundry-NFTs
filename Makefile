@@ -42,7 +42,7 @@ deploy-local:
 
 
 mint:
-	@forge script script/Interactions.s.sol:MintBasicNft  --private-key $(PRIVATE_KEY) --rpc-url $(SEPOLIA_RPC_URL) --broadcast
+	@forge script script/Interactions.s.sol:MintBasicNft  --private-key $(PRIVATE_KEY) --rpc-url $(SEPOLIA_RPC_URL) --broadcast -vvvv
 
 deployMood:
 	@forge script script/DeployMoodNft.s.sol:DeployMoodNft $(NETWORK_ARGS)

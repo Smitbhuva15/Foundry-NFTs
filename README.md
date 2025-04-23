@@ -1,66 +1,28 @@
-## Foundry
+# Foundry NFT
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
 
-Foundry consists of:
+1. An IPFS Hosted NFT 
+2. An SVG NFT (Hosted 100% on-chain) 
+<br/>
+<p align="center">
+<img src="./image/dogNft/dog1.png" width="225" alt="NFT Pug">
+<img src="./image/dynamicNft/happy.svg" width="225" alt="NFT Happy">
+<img src="./image/dynamicNft/sad.svg" width="225" alt="NFT Frown">
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+</p>
+<br/>
 
-## Documentation
 
-https://book.getfoundry.sh/
+## Base64
 
-## Usage
+To get the base64 of an image, you can use the following command:
 
-### Build
-
-```shell
-$ forge build
+```
+echo "data:image/svg+xml;base64,$(base64 -i ./image/dynamicNft/happy.svg)"
 ```
 
-### Test
+Then, you can get the base64 encoding of the json object by placing the imageURI into `happy_image_uri.json` then running:
 
-```shell
-$ forge test
 ```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
+echo "data:application/json;base64,$(base64 -i ./image/dynamicNft/happy_image_uri.json)"
 ```
